@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN"
+        "http://tuckey.org/res/dtds/urlrewrite3.1.dtd">
+
+<urlrewrite>
+	<rule>
+		<from>^/user/detail/(.*).html</from>
+		<to>/user/detail/$1</to>
+	</rule>
+	
+	<rule>
+		<from>^/welcome.html</from>
+		<to>/user</to>
+	</rule>
+</urlrewrite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yibangren.order.mapper.OrderMapper">
+
+	<resultMap id="result" type="order">
+		<result property="orderId" column="order_id" />
+		<result property="orderName" column="order_name" />
+		<result property="telNum" column="tel_num" />
+		<result property="province" column="province" />
+		<result property="note" column="note" />
+
+	</resultMap>
+
+	<insert id="addOrder" parameterType="order">
+		INSERT INTO t_order
+		(order_name,tel_num,province,note)
+		VALUE
+		(#{orderName},#{telNum},#{province},#{note})
+	</insert>
+
+
+	<select id="getAllOrder" resultMap="result">
+		SELECT order_id, order_name, tel_num, province,note
+		FROM t_order
+	</select>
+
+
+</mapper>
